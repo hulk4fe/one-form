@@ -176,7 +176,7 @@ class DynamicForm extends Component {
 
   render() {
     const { form, submit } = this.props;
-    const { rows, formitems, ...other } = this.props.option;
+    const { rows, formitems, ...other } = this.props.options;
     return (
       <Form
         {...other}
@@ -196,7 +196,7 @@ class DynamicForm extends Component {
 
 DynamicForm.propTypes = {
   form: PropTypes.object.isRequired,
-  option: PropTypes.object.isRequired,
+  options: PropTypes.object.isRequired,
   submit: PropTypes.func,
 };
 

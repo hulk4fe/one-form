@@ -11,14 +11,14 @@ const Form = form((props, fields) => {
 class Demo extends Component {
 
   state = {
-    option: { ...inline },
+    options: { ...inline },
   }
 
   render() {
     return (
       <div style={{ padding: 20 }}>
         <Form
-          option={this.state.option}
+          options={this.state.options}
         />
       </div>
     );
