@@ -10,6 +10,7 @@ export default {
           type: 'autoComplete',
           label: 'autoComplete',
           id: 'name',
+          description: 'a description',
           options: {
             rules: [{
               required: true,

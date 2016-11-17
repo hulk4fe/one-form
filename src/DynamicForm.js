@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import {
   Row, Col, Form, Input, InputNumber, Select, Switch,
   AutoComplete, Checkbox, Cascader, DatePicker, TimePicker, Mention, Radio,
-  Rate, Slider, Transfer, TreeSelect, Upload, Button, Icon,
+  Rate, Slider, Transfer, TreeSelect, Upload, Button, Icon, Tooltip,
 } from 'antd';
 
 const FormItem = Form.Item;
@@ -40,9 +40,20 @@ class DynamicForm extends Component {
   formitems(formitems) {
     const { getFieldDecorator } = this.props.form;
     return formitems.map((formitem, i) => {
-      const { type, id, options, item, ...other } = formitem;
+      const { type, description, id, options, item, ...other } = formitem;
+      if (other.label && description) {
+        other.label = (
+          <span>
+            {other.label}&nbsp;
+            <Tooltip title={description}><Icon type="question-circle-o" /></Tooltip>
+          </span>
+        );
+      }
       return (
-        <FormItem key={i} {...other}>
+        <FormItem
+          key={i}
+          {...other}
+        >
           {
             getFieldDecorator(id, options)(
               this.item(type, item)
