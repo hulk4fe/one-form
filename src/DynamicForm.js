@@ -40,12 +40,12 @@ class DynamicForm extends Component {
   formitems(formitems) {
     const { getFieldDecorator } = this.props.form;
     return formitems.map((formitem, i) => {
-      const { type, description, id, options, item, ...other } = formitem;
+      const { type, description, descriptionIcon, id, options, item, ...other } = formitem;
       if (other.label && description) {
         other.label = (
           <span>
             {other.label}&nbsp;
-            <Tooltip title={description}><Icon type="question-circle-o" /></Tooltip>
+            <Tooltip title={description}><Icon type={descriptionIcon || 'question-circle-o'} /></Tooltip>
           </span>
         );
       }
