@@ -1,0 +1,39 @@
+{
+  "name": "wz-form",
+  "version": "1.0.0",
+  "description": "wz-form React component",
+  "main": "lib/index.js",
+  "files": [
+    "css",
+    "es",
+    "lib",
+    "umd"
+  ],
+  "scripts": {
+    "build": "nwb build-react-component",
+    "clean": "nwb clean-module && npm clean-demo",
+    "start": "nwb serve-react-demo",
+    "test": "nwb test",
+    "test:coverage": "nwb test --coverage",
+    "test:watch": "nwb test --server"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "antd": "2.x",
+    "react": "15.x"
+  },
+  "devDependencies": {
+    "antd": "^2.4.2",
+    "babel-plugin-import": "^1.0.1",
+    "nwb": "0.12.x",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
+  },
+  "author": "",
+  "homepage": "",
+  "license": "MIT",
+  "repository": "",
+  "keywords": [
+    "react-component"
+  ]
+}

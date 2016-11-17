@@ -1,0 +1,23 @@
+{
+  "parser": "babel-eslint",
+  "extends": "eslint-config-airbnb",
+  "rules": {
+    "react/forbid-prop-types": [0], // 可以使用 object 属性
+    "jsx-a11y/no-static-element-interactions": [0],
+    "no-console": [0],
+    "import/prefer-default-export": [0],
+    "no-param-reassign": [0],
+    "no-bitwise": [0],
+    "no-plusplus": [0],
+    "class-methods-use-this": [0],
+    "no-shadow": [0],
+    "import/no-extraneous-dependencies": [0],
+    "react/jsx-filename-extension": [0]
+  },
+  "env": {
+    "browser": true
+  },
+  "ecmaFeatures": {
+    "experimentalObjectRestSpread": true
+  }
+}
