@@ -55,9 +55,10 @@ class DynamicForm extends Component {
           {...other}
         >
           {
+            id ?
             getFieldDecorator(id, options)(
-              this.item(type, item)
-            )
+              this.item(type, item),
+            ) : this.item(type, item)
           }
         </FormItem>
       );
@@ -180,6 +181,12 @@ class DynamicForm extends Component {
             </Dragger>
           </div>
         );
+      case 'button': {
+        const { title, ...other } = item;
+        return (
+          <Button {...other}>{title}</Button>
+        );
+      }
       default:
         return (<Input {...item} />);
     }

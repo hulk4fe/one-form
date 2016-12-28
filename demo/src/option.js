@@ -196,6 +196,13 @@ export default {
         }, {
           type: 'dragger',
           id: 'dragger',
+        }, {
+          type: 'button',
+          item: {
+            title: '查询',
+            type: 'primary',
+            htmlType: 'submit',
+          },
         }],
       }],
     }],
