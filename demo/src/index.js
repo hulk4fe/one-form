@@ -4,9 +4,7 @@ import { render } from 'react-dom';
 import form from '../../src';
 import { inline } from './option';
 
-const Form = form((props, fields) => {
-  console.log(fields);
-});
+const Form = form();
 
 class Demo extends Component {
 

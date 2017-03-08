@@ -1,6 +1,6 @@
 export default {
   inline: {
-    horizontal: true,
+    layout: 'horizontal',
     rows: [{
       type: 'flex',
       cols: [{
