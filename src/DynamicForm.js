@@ -1,10 +1,12 @@
 import React, { Component, PropTypes } from 'react';
 import {
+  Collapse,
   Row, Col, Form, Input, InputNumber, Select, Switch,
   AutoComplete, Checkbox, Cascader, DatePicker, TimePicker, Mention, Radio,
   Rate, Slider, Transfer, TreeSelect, Upload, Button, Icon, Tooltip,
 } from 'antd';
 
+const Panel = Collapse.Panel;
 const FormItem = Form.Item;
 const Option = Select.Option;
 const CheckboxGroup = Checkbox.Group;
@@ -14,6 +16,27 @@ const RadioGroup = Radio.Group;
 const Dragger = Upload.Dragger;
 
 class DynamicForm extends Component {
+
+  collapse(collapse) {
+    const { panels, ...other } = collapse;
+    return (
+      <Collapse {...other}>
+        {this.panels(panels)}
+      </Collapse>
+    );
+  }
+
+  panels(panels) {
+    return panels.map(panel => {
+      const { rows, formitems, ...other } = panel;
+      return (
+        <Panel {...other}>
+          {rows && this.rows(rows)}
+          {formitems && this.formitems(formitems)}
+        </Panel>
+      );
+    });
+  }
 
   rows(rows) {
     return rows.map((row, i) => {
@@ -40,7 +63,7 @@ class DynamicForm extends Component {
   formitems(formitems) {
     const { getFieldDecorator } = this.props.form;
     return formitems.map((formitem, i) => {
-      const { type, description, descriptionIcon, id, options, item, ...other } = formitem;
+      const { key, type, description, descriptionIcon, id, options, item, ...other } = formitem;
       if (other.label && description) {
         other.label = (
           <span>
@@ -51,7 +74,7 @@ class DynamicForm extends Component {
       }
       return (
         <FormItem
-          key={i}
+          key={key || i}
           {...other}
         >
           {
@@ -194,7 +217,7 @@ class DynamicForm extends Component {
 
   render() {
     const { form, submit } = this.props;
-    const { rows, formitems, ...other } = this.props.options;
+    const { rows, formitems, collapse, ...other } = this.props.options;
     return (
       <Form
         {...other}
@@ -206,7 +229,9 @@ class DynamicForm extends Component {
           });
         }}
       >
-        {rows ? this.rows(rows) : this.formitems(formitems)}
+        {collapse && this.collapse(collapse)}
+        {rows && this.rows(rows)}
+        {formitems && this.formitems(formitems)}
       </Form>
     );
   }
