@@ -10,8 +10,8 @@ export default {
         rows: [{
           type: 'flex',
           cols: [{
-            span: 8,
-            offset: 8,
+            span: 12,
+            offset: 6,
             formitems: [{
               type: 'autoComplete',
               label: 'autoComplete',
@@ -209,6 +209,11 @@ export default {
                 type: 'primary',
                 htmlType: 'submit',
               },
+            }, {
+              type: 'icon',
+              item: {
+                type: 'link'
+              }
             }],
           }],
         }],
@@ -218,8 +223,8 @@ export default {
         rows: [{
           type: 'flex',
           cols: [{
-            span: 8,
-            offset: 8,
+            span: 12,
+            offset: 6,
             formitems: [{
               type: 'autoComplete',
               label: 'autoComplete',

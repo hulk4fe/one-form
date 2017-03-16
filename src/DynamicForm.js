@@ -210,6 +210,12 @@ class DynamicForm extends Component {
           <Button {...other}>{title}</Button>
         );
       }
+      case 'icon': {
+        const { type, ...other } = item;
+        return (
+          <Icon type={type} {...other} />
+        );
+      }
       default:
         return (<Input {...item} />);
     }
