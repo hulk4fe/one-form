@@ -1,6 +1,6 @@
 {
   "name": "wz-form",
-  "version": "1.0.4",
+  "version": "1.0.7",
   "description": "wz-form React component",
   "main": "lib/index.js",
   "files": [

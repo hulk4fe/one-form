@@ -40,9 +40,9 @@ class DynamicForm extends Component {
 
   rows(rows) {
     return rows.map((row, i) => {
-      const { cols, ...other } = row;
+      const { cols, key, ...other } = row;
       return (
-        <Row key={i} {...other}>
+        <Row key={key || i} {...other}>
           {this.cols(cols)}
         </Row>
       );
@@ -51,9 +51,9 @@ class DynamicForm extends Component {
 
   cols(cols) {
     return cols.map((col, i) => {
-      const { formitems, ...other } = col;
+      const { formitems, key, ...other } = col;
       return (
-        <Col key={i} {...other}>
+        <Col key={key || i} {...other}>
           {this.formitems(formitems)}
         </Col>
       );
