@@ -1,7 +1,7 @@
 {
-  "name": "wz-form",
-  "version": "1.0.2",
-  "description": "wz-form React component",
+  "name": "one-form",
+  "version": "1.0.0",
+  "description": "one-form React component",
   "main": "lib/index.js",
   "files": [
     "css",
@@ -17,13 +17,12 @@
     "test:coverage": "nwb test --coverage",
     "test:watch": "nwb test --server"
   },
-  "dependencies": {},
   "peerDependencies": {
     "antd": "2.x",
     "react": "15.x"
   },
   "devDependencies": {
-    "antd": "^2.4.2",
+    "antd": "^2.8.1",
     "babel-plugin-import": "^1.0.1",
     "nwb": "0.12.x",
     "react": "^15.3.2",

@@ -1,11 +1,15 @@
-# wz-form
+# one-form
 
 [![Travis][build-badge]][build]
 [![npm package][npm-badge]][npm]
 [![Coveralls][coveralls-badge]][coveralls]
 
+<<<<<<< HEAD
 如何使用
 请查看 demo 文件夹，示例
+=======
+Describe one-form here.
+>>>>>>> dev
 
 [build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
 [build]: https://travis-ci.org/user/repo
