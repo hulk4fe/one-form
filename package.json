@@ -1,7 +1,7 @@
 {
-  "name": "wz-form",
+  "name": "one-form",
   "version": "1.0.7",
-  "description": "wz-form React component",
+  "description": "one-form React component",
   "main": "lib/index.js",
   "files": [
     "css",
