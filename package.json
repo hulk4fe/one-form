@@ -1,6 +1,6 @@
 {
   "name": "one-form",
-  "version": "1.0.7",
+  "version": "1.0.0",
   "description": "one-form React component",
   "main": "lib/index.js",
   "files": [
