@@ -17,6 +17,18 @@ const Dragger = Upload.Dragger;
 
 class DynamicForm extends Component {
 
+  container(container){
+    return container.map(item => {
+      const { rows, formitems, ...other } = item;
+      return (
+        <div {...other}>
+          {rows && this.rows(rows)}
+          {formitems && this.formitems(formitems)}
+        </div>
+      );
+    });
+  }
+
   collapse(collapse) {
     const { panels, ...other } = collapse;
     return (
@@ -223,7 +235,7 @@ class DynamicForm extends Component {
 
   render() {
     const { form, submit } = this.props;
-    const { rows, formitems, collapse, ...other } = this.props.options;
+    const { rows, formitems, collapse, container, ...other } = this.props.options;
     return (
       <Form
         {...other}
@@ -235,6 +247,7 @@ class DynamicForm extends Component {
           });
         }}
       >
+        {container && this.container(container)}
         {collapse && this.collapse(collapse)}
         {rows && this.rows(rows)}
         {formitems && this.formitems(formitems)}
