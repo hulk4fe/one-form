@@ -3,7 +3,7 @@ import {
   Collapse,
   Row, Col, Form, Input, InputNumber, Select, Switch,
   AutoComplete, Checkbox, Cascader, DatePicker, TimePicker, Mention, Radio,
-  Rate, Slider, Transfer, TreeSelect, Upload, Button, Icon, Tooltip,
+  Rate, Slider, Transfer, TreeSelect, Upload, Button, Icon, Tooltip, Tabs
 } from 'antd';
 
 const Panel = Collapse.Panel;
@@ -25,6 +25,27 @@ class DynamicForm extends Component {
           {rows && this.rows(rows)}
           {formitems && this.formitems(formitems)}
         </div>
+      );
+    });
+  }
+
+  tabs(tabs){
+    const { tabpane, ...other } = tabs;
+    return (
+      <Tabs {...other}>
+          {this.tabPane(tabpane)}
+      </Tabs>
+    );
+  }
+
+  tabPane(tabpane){
+    return tabpane.map(item => {
+      const { rows, formitems, ...other } = item;
+      return (
+        <Tabs.TabPane {...other}>
+          {rows && this.rows(rows)}
+          {formitems && this.formitems(formitems)}
+        </Tabs.TabPane>
       );
     });
   }
@@ -235,7 +256,7 @@ class DynamicForm extends Component {
 
   render() {
     const { form, submit } = this.props;
-    const { rows, formitems, collapse, container, ...other } = this.props.options;
+    const { rows, formitems, collapse, container, tabs, ...other } = this.props.options;
     return (
       <Form
         {...other}
@@ -247,6 +268,7 @@ class DynamicForm extends Component {
           });
         }}
       >
+        {tabs && this.tabs(tabs)}
         {container && this.container(container)}
         {collapse && this.collapse(collapse)}
         {rows && this.rows(rows)}
