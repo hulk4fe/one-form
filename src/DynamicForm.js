@@ -40,7 +40,13 @@ class DynamicForm extends Component {
 
   tabPane(tabpane){
     return tabpane.map(item => {
-      const { rows, formitems, ...other } = item;
+      const { rows, formitems, container, ...other } = item;
+      if(container){
+        return (        
+        <Tabs.TabPane {...other}>
+          {this.container(container)}
+        </Tabs.TabPane>)
+      }
       return (
         <Tabs.TabPane {...other}>
           {rows && this.rows(rows)}
